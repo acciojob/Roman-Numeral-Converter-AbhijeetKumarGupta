@@ -12,9 +12,9 @@ function convertToRoman(num) {
   //your code here
 	let result = '';
 
-  for (const [roman, value] of obj) {
+  for (const value of Object.keys(obj).map(Number).sort((a, b) => b - a)) {
     while (num >= value) {
-      result += roman;
+      result += obj[value];
       num -= value;
     }
   }
